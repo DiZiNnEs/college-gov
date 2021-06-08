@@ -1,18 +1,33 @@
 from django.db import models
 
 
+class College(models.Model):
+    COLLEGE_TYPE = [
+        ('NAT', 'National'),
+        ('PRV', 'PRIVATE'),
+    ]
+
+    title = models.CharField(max_length=256, verbose_name='название')
+    category = models.ForeignKey('Category', on_delete=models.CASCADE)
+    street = models.CharField(max_length=128)
+    email = models.EmailField()
+    type = models.CharField(max_length=3, choices=COLLEGE_TYPE, default='NAT')
+    country = models.ForeignKey('Country', on_delete=models.PROTECT)
+    city = models.ForeignKey('City', on_delete=models.PROTECT)
+
+
 class Country(models.Model):
-    pass
+    name = models.CharField(max_length=64, verbose_name='Название страны')
+    code = models.SmallIntegerField(default='+', verbose_name='Код страны')
 
 
 class City(models.Model):
-    pass
+    name = models.CharField(max_length=64, verbose_name='Название города')
 
 
 class Category(models.Model):
-    # Имеется ввиду государственный или частный
-    pass
+    name = models.CharField(max_length=128, verbose_name='категория колледжа')
 
 
-class College(models.Model):
-    pass
+
+
