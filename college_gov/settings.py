@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'college_api_app.apps.CollegeApiConfig',
+
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
