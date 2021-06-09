@@ -5,4 +5,4 @@ from college_api_app.views import CollegeViewSet
 
 router = DefaultRouter()
 
-router.register('college', CollegeViewSet)
+router.register(r'college', CollegeViewSet)
