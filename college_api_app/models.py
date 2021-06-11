@@ -4,7 +4,7 @@ from django.db import models
 class College(models.Model):
     COLLEGE_TYPE = [
         ('NAT', 'National'),
-        ('PRV', 'PRIVATE'),
+        ('PRV', 'Private'),
     ]
 
     title = models.CharField(max_length=256, verbose_name='название')
@@ -14,6 +14,7 @@ class College(models.Model):
     type = models.CharField(max_length=3, choices=COLLEGE_TYPE, default='NAT')
     country = models.ForeignKey('Country', on_delete=models.PROTECT)
     city = models.ForeignKey('City', on_delete=models.PROTECT)
+    budget = models.DecimalField(max_digits=19, decimal_places=10)
 
 
 class Country(models.Model):
