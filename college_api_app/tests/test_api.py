@@ -24,9 +24,10 @@ class CollegesApiTestCase(APITestCase):
         city_2 = City.objects.create(name='Moscow')
 
         college_1 = College.objects.create(title='KAZGTK', category=category_1, street='Pushkina 3',
-                                           email='kazgtk@gmail.com', type='PRV', country=country_1, city=city_1)
+                                           email='kazgtk@gmail.com', type='PRV', country=country_1, city=city_1,
+                                           budget=10000.231)
         college_2 = College.objects.create(title='VTK', category=category_2, street='Tajenova 88', email='VTK@mail.ru',
-                                           type='NAT', country=country_2, city=city_2)
+                                           type='NAT', country=country_2, city=city_2, budget=13213.231233)
 
         url = reverse('api:college-list')
         response = self.client.get(url)
