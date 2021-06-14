@@ -35,22 +35,22 @@ class SerializersTestCase(TestCase):
             'id': self.college_1.id,
             'type': 'PRV',
             'title': 'KAZGTK',
-            'category': self.category_1.pk,
+            'category': self.category_1.name,
             'street': 'Pushkina 3',
             'email': 'kazgtk@gmail.com',
-            'country': self.country_1.id,
-            'city': self.city_1.pk,
+            'country': self.country_1.name,
+            'city': self.city_1.name,
             'budget': '1000.0230200000',
         }
         expected_data_college_2 = {
             'id': self.college_2.id,
             'type': 'NAT',
             'title': 'VTK',
-            'category': self.category_2.pk,
+            'category': self.category_2.name,
             'street': 'Tajenova 88',
             'email': 'VTK@mail.ru',
-            'country': self.country_2.id,
-            'city': self.city_2.pk,
+            'country': self.country_2.name,
+            'city': self.city_2.name,
             'budget': '3545323.1234930000',
         }
 
