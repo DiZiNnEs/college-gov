@@ -21,14 +21,19 @@ class Country(models.Model):
     name = models.CharField(max_length=64, verbose_name='Название страны')
     code = models.SmallIntegerField(default='+', verbose_name='Код страны')
 
+    def __str__(self):
+        return self.name
+
 
 class City(models.Model):
     name = models.CharField(max_length=64, verbose_name='Название города')
+
+    def __str__(self):
+        return self.name
 
 
 class Category(models.Model):
     name = models.CharField(max_length=128, verbose_name='категория колледжа')
 
-
-
-
+    def __str__(self):
+        return self.name
