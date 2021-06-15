@@ -42,3 +42,27 @@ class CollegesApiTestCase(APITestCase):
         url = reverse('api:college-list')
         response = self.client.get(url)
         self.assertEqual(status.HTTP_200_OK, response.status_code)
+
+    def test_college_filter_first_college(self):
+        url = reverse('api:college-list')
+        response = self.client.get(url, data={'category': 'Tech'})
+        serializer_data = CollegeSerializer(self.college_1, many=False).data
+        self.assertEqual(serializer_data, response.data[0])
+
+    def test_college_filter_second_college(self):
+        url = reverse('api:college-list')
+        response = self.client.get(url, data={'category': 'IT'})
+        serializer_data = CollegeSerializer(self.college_2, many=False).data
+        self.assertEqual(serializer_data, response.data[0])
+
+    def test_college_first_search(self):
+        url = reverse('api:college-list')
+        response = self.client.get(url, data={'search': 'KAZGTK'})
+        serializer_data = CollegeSerializer(self.college_1, many=False).data
+        self.assertEqual(serializer_data, response.data[0])
+
+    def test_college_second_search(self):
+        url = reverse('api:college-list')
+        response = self.client.get(url, data={'search': 'KAZGTK'})
+        serializer_data = CollegeSerializer(self.college_1, many=False).data
+        self.assertEqual(serializer_data, response.data[0])
