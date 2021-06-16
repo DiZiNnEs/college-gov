@@ -8,6 +8,8 @@ django = "*"
 djangorestframework = "*"
 coverage = "*"
 django-filter = "*"
+pip = "*"
+djangorestframework-simplejwt = "*"
 
 [dev-packages]
 
