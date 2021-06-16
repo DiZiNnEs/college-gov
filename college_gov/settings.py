@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'college_api_app.apps.CollegeApiConfig',
+    'authentication.apps.AuthenticationConfig',
 
     'django_filters',
     'rest_framework',
