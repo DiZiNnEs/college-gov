@@ -1,0 +1,73 @@
+{
+	"info": {
+		"_postman_id": "9758f174-b5b2-4d67-ac66-d2d8b7194bda",
+		"name": "College-django",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET Colleges",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjI0MjE1MTAwLCJqdGkiOiJhZjQ2NzhjYjY5N2Q0MjJlYTA2ZTI1YjI3MTFiYzM2ZSIsInVzZXJfaWQiOjF9.nZnkiqyVJ9JSUZ6G3UMf1VNO8sQoqeKqES9npWdpsEo",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/college/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"college",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Authentication",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"dizi\",\n    \"password\": 852456\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/authentication/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"authentication",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
